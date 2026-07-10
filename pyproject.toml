@@ -1,15 +1,16 @@
 [project]
-name = "cnki-mcp"
-version = "0.1.0"
-description = "CNKI MCP Server for academic paper search (Playwright)"
+name = "cnki-research-mcp"
+version = "0.2.0"
+description = "CNKI research MCP for HUST institutional SSO and authorized full-text reading"
 requires-python = ">=3.10"
 dependencies = [
     "fastmcp>=2.0.0",
-    "playwright",
+    "playwright>=1.61.0",
 ]
 
 [project.scripts]
-cnki-mcp = "cnki_mcp_server:main"
+cnki-research-mcp = "cnki_mcp_server:main"
+cnki-research-login = "cnki_mcp_server:login_main"
 
 [build-system]
 requires = ["hatchling"]
