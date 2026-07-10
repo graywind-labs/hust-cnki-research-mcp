@@ -1,6 +1,6 @@
 [project]
 name = "cnki-research-mcp"
-version = "0.2.0"
+version = "0.2.1"
 description = "CNKI research MCP for HUST institutional SSO and authorized full-text reading"
 requires-python = ">=3.10"
 dependencies = [
@@ -11,10 +11,11 @@ dependencies = [
 [project.scripts]
 cnki-research-mcp = "cnki_mcp_server:main"
 cnki-research-login = "cnki_mcp_server:login_main"
+cnki-research-http = "cnki_mcp_server:http_main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+only-include = ["cnki_mcp_server.py"]

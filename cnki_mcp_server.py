@@ -1304,15 +1304,26 @@ async def get_server_status(ctx: Context) -> str:
 
 
 def main():
-    mcp.run()
+    if "--http" in sys.argv[1:]:
+        http_main()
+    else:
+        mcp.run()
 
 
 def login_main():
     raise SystemExit(asyncio.run(_interactive_login()))
 
 
+def http_main():
+    host = os.environ.get("CNKI_MCP_HOST", "127.0.0.1")
+    port = int(os.environ.get("CNKI_MCP_PORT", "8000"))
+    mcp.run(transport="http", host=host, port=port)
+
+
 if __name__ == "__main__":
     if "--login" in sys.argv[1:]:
         login_main()
+    elif "--http" in sys.argv[1:]:
+        http_main()
     else:
         main()

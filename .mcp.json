@@ -1,7 +1,8 @@
 {
   "mcpServers": {
     "cnki": {
-      "command": "cnki-mcp"
+      "command": "python",
+      "args": ["-m", "cnki_mcp_server"]
     }
   }
 }
