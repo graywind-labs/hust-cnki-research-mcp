@@ -6,6 +6,24 @@
 
 > 本文先给出 Windows 10/11 的小白安装方法。熟悉 Python 的用户可直接跳到最后的[手动安装](#手动安装源码开发者)。
 
+## 极简安装：直接让 Agent 帮你装
+
+如果你已经装好了 **Codex、Claude Code、WorkBuddy 或其他支持 MCP 的 Agent**，不需要自己阅读后面的安装步骤。直接把下面这句话完整复制给它：
+
+```text
+帮我安装 https://github.com/graywind-labs/hust-cnki-research-mcp.git 并接入这个 MCP，同时安装所有所需依赖。请自动识别当前 Agent 所需的 MCP 配置方式，完成安装、配置和连接验证；需要我在 Chrome 中登录华中科技大学统一认证和知网时，再提示我操作。
+```
+
+也就是告诉它：帮我安装 [graywind-labs/hust-cnki-research-mcp](https://github.com/graywind-labs/hust-cnki-research-mcp.git)、接入 MCP，并安装全部依赖。
+
+接下来只需：
+
+1. Agent 请求执行安装命令时，确认允许；
+2. Agent 打开专用 Chrome 窗口后，由你本人完成学校统一认证；
+3. 等 Agent 告诉你 MCP 已连接并验证成功。
+
+如果 Agent 无法自动完成，再按照下方的“小白分步安装”操作。
+
 ## 可以做什么
 
 - 按主题、关键词、篇名、作者、机构、基金、摘要、DOI 等字段检索论文；
@@ -16,7 +34,7 @@
 - 下载机构已授权的 PDF；
 - 保存论文标签和浏览器登录状态。
 
-## 安装前需要什么
+## 小白分步安装：先准备环境
 
 只需要以下三样：
 
